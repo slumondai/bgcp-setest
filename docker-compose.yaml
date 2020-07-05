@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+
+  web:
+    build:
+      dockerfile: Dockerfile-web
+      context: .
+    container_name: web
+    ports:
+      - 8080:80
+    depends_on:
+      - api
+    
+  api:
+    build:
+      dockerfile: Dockerfile-api
+      context: .
+    container_name: api
+    ports:
+      - 8081:80

@@ -1,0 +1,5 @@
+FROM python:3.8
+RUN pip install -q uvicorn==0.11.5 fastapi==0.58.1
+COPY ./api /api
+WORkDIR /api
+CMD uvicorn app:app --host 0.0.0.0 --port 80
